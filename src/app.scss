@@ -1,0 +1,21 @@
+:root {
+	--link-color: #0400fb;
+	--main-color: rgb(93, 159, 127);
+	--border-radius: 0.35rem;
+	--sidebar-width: 200px;
+}
+
+html, * {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: var(--link-color);
+}
