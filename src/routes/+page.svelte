@@ -1,7 +1,7 @@
 <script>
     import * as pdfMake from "pdfmake/build/pdfmake";
     import * as pdfFonts from 'pdfmake/build/vfs_fonts';
-    pdfMake.vfs = pdfFonts.pdfMake.vfs;
+    //pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
     import database from '$lib/database.js' 
 
@@ -200,7 +200,7 @@
             }
         }
 
-        pdfMake.createPdf(docDefinition).open()
+        pdfMake.createPdf(docDefinition, null, null, pdfFonts.pdfMake.vfs).open()
     }
 
     const propertySearch = async(address) => {
