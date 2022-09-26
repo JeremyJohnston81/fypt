@@ -20,6 +20,7 @@
 	"type": "module",
 	"dependencies": {
 		"itty-fetcher": "^0.2.4",
+		"pdfmake-lite": "^0.1.70",
 		"sass": "^1.55.0"
 	}
 }

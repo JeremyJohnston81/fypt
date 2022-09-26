@@ -1,6 +1,6 @@
 <script>
-    // import { createPdf } from "pdfmake-lite/build/pdfmake.min";
-    // import * as pdfFonts from 'pdfmake-lite/build/vfs_fonts';
+    import { createPdf } from "pdfmake-lite/build/pdfmake";
+    import * as pdfFonts from 'pdfmake-lite/build/vfs_fonts';
     //pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
     import database from '$lib/database.js' 
