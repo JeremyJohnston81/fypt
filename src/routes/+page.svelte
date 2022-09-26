@@ -1,5 +1,5 @@
 <script>
-    import * as pdfMake from "pdfmake/build/pdfmake";
+    import * as pdfMake from "pdfmake/build/pdfmake.min";
     import * as pdfFonts from 'pdfmake/build/vfs_fonts';
     //pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
