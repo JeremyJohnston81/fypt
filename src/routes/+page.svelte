@@ -1,14 +1,13 @@
 <script>
-    // import { createPdf } from "pdfmake/build/pdfmake.min";
-    // import * as pdfFonts from 'pdfmake/build/vfs_fonts';
-    //pdfMake.vfs = pdfFonts.pdfMake.vfs;
-
+    import { variables } from '$lib/variables'
     import database from '$lib/database.js' 
+    import img2base from '$lib/imageToBase64'
+    //import * as i2b from 'imageurl-base64'
 
     let searchResults = []
     let searchAddress = ""
 
-    const createPdfReport = (subjectProperty, comps) => {
+    const createPdfReport = async (subjectProperty, comps) => {
 
         const compCount = comps.length
         let compAvgSqFtPrice
@@ -83,8 +82,10 @@
             mapURL += encodeURI('|' + sourceRow.address);
         });
 
-        // mapURL += '&key=' + config.google.accesskey;
-        // const mapImage = await i2bPromise(mapURL);
+        mapURL += '&key=' + variables.googleKey;
+        console.log(mapURL)
+        const mapImage = await img2base(mapURL)
+        //const mapImage = await i2bPromise(mapURL);
 
         const docDefinition = {
             info: {
@@ -175,8 +176,8 @@
                     }
                 },
             /************ PAGE 4 - Google Map ***************/
-                // {text: 'Map View', fontSize: 20, marginBottom: 10, marginTop: 30, alignment: 'center', pageBreak: 'before'},
-                // {image: mapImage.dataUri,  width: 765},
+                {text: 'Map View', fontSize: 20, marginBottom: 10, marginTop: 30, alignment: 'center', pageBreak: 'before'},
+                {image: mapImage,  width: 765},
             /************ STYLES ***************/
             ],
             styles: {
@@ -200,7 +201,6 @@
             }
         }
 
-        //createPdf(docDefinition, null, null, pdfFonts.pdfMake.vfs).open()
         pdfMake.createPdf(docDefinition).open()
     }
 
@@ -215,8 +215,10 @@
 </script>
 
 <h1>Protest Your Property Taxes</h1>
-<input type="textbox" placeholder="Enter Property Address" bind:value={searchAddress}>
-<button type="submit" on:click="{propertySearch(searchAddress)}">Search</button>
+<form on:submit|preventDefault="{propertySearch(searchAddress)}">
+    <input type="textbox" placeholder="Enter Property Address" bind:value={searchAddress}>
+    <button type="submit" on:click="{propertySearch(searchAddress)}">Search</button>
+</form>
 <br />
 {#each searchResults as property }
     <p>{property.owner} - {property.addr1}, {property.addr2}, {property.addr3}</p>
