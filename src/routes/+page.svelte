@@ -6,7 +6,7 @@
     import database from '$lib/database.js' 
 
     let searchResults = []
-    let searchAddress = "1118 W 7th"
+    let searchAddress = ""
 
     const createPdfReport = (subjectProperty, comps) => {
 
