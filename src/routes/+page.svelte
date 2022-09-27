@@ -200,7 +200,7 @@
             }
         }
 
-        //createPdf(docDefinition, null, null, pdfFonts.pdfMake.vfs).open()
+        createPdf(docDefinition, null, null, pdfFonts.pdfMake.vfs).open()
     }
 
     const propertySearch = async(address) => {
