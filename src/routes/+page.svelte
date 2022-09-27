@@ -1,5 +1,5 @@
 <script>
-    import { createPdf } from "pdfmake-lite/build/pdfmake";
+    import { createPdf } from "pdfmake-lite/build/pdfmake.min";
     import * as pdfFonts from 'pdfmake-lite/build/vfs_fonts';
     //pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
