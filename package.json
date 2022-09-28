@@ -20,6 +20,7 @@
 	"type": "module",
 	"dependencies": {
 		"itty-fetcher": "^0.2.4",
-		"sass": "^1.55.0"
+		"sass": "^1.55.0",
+		"svelte-preprocess": "^4.10.7"
 	}
 }

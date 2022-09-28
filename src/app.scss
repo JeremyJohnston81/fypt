@@ -1,21 +1,110 @@
 :root {
-	--link-color: #0400fb;
-	--main-color: rgb(93, 159, 127);
-	--border-radius: 0.35rem;
-	--sidebar-width: 200px;
-}
-
-html, * {
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-}
-
-body {
+	--border-radius: 0.3rem;
+	--primary-color: #1e82e9;
+	--secondary-color: #888;
+	--primary-fg-color: #fff;
+	--secondary-fg-color: #bbb;
+  }
+  
+  body {
+	height: 100%;
 	font-family: Arial, Helvetica, sans-serif;
-}
+  }
+  
+  h1 {
+	font-size: 2rem;
+	font-weight: lighter;
+	display: flex;
+	flex-flow: column;
+	margin-bottom: 0.5em;
+  }
+  
+  h1:before {
+	content: 'STEP 1 of 2';
+	font-weight: bold;
+	font-size: 0.8em;
+	opacity: 0.4;
+  }
+  
+  h1:after {
+	font-size: 0.5em;
+  }
+  
+  input, button {
+	font-size: 2rem;
+	border-radius: var(--border-radius);
+	border: 1px solid rgba(0,0,0,0.4);
+	padding: 0.6rem 0.7rem;
+  }
+  
+  input {
+	font-size: 1.5rem;
+  }
+  
+  input::placeholder {
+	opacity: 0.5;
+  }
+  
+  input:focus {
+	outline-color: var(--primary-color);
+  }
+  
+  form {
+	display: flex;
+	gap: 0.6em;
+  }
+  
+  button {
+	font-size: 1.6rem;
+	padding: 0.3rem 1.5rem;
+	background-color: var(--primary-color);
+	color: var(--primary-fg-color);
+	border: none;
+	cursor: pointer;
+	transition: all 0.1s ease;
+  }
+  
+  form button {
+	background-color: var(--secondary-color);
+	color: var(--secondary-fg-color);
+  }
+  
+  button:hover {
+	opacity: 0.8;
+  }
+  
+  p {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+  }
+  
+  p:before {
+	font-size: 1rem;
+	display: block;
+	margin-bottom: 1.5em;
+	margin-top: 1rem;
+	border-top: 2px dashed #ccc;
+	padding-top: 1.6rem;
+  }
+  
+  p + button {
+	padding: 0.5rem;
+	display: flex;
+	justify-content: center;
+	gap: 0.4em;
+	align-items: center;
+  }
+  
+  p + button:before {
+	opacity: 0.6;
+  }
+  
+  p + button:after {
+	content: ' 👉';
+	font-size: 1.4em;
+  }
 
-a {
-	text-decoration: none;
-	color: var(--link-color);
-}
+  .error {
+	color: red;
+	font-size: 2rem;
+  }

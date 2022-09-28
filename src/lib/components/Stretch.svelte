@@ -21,7 +21,7 @@
     width: 10%;
     display: inline-block;
     margin-right: 4px;
-    background-color: var(--main-color);
+    background-color: var(--secondary-color);
     animation: stretch var(--duration) ease-in-out infinite;
   }
   @keyframes stretch {
@@ -36,7 +36,6 @@
   }
 
   .loading {
-    position: fixed;
     z-index: 999999;
     overflow: show;
     margin: auto;
@@ -56,7 +55,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 1.0);
   }
 </style>
 <div class="loading">
