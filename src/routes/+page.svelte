@@ -4,7 +4,7 @@
     import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 
     let searchResults = []
-    let searchAddress = "1118 W 7th"
+    let searchAddress = ""
     let searched = false
     let error
 
