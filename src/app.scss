@@ -108,3 +108,14 @@
 	color: red;
 	font-size: 2rem;
   }
+
+  @media (max-width:480px) {
+	h1 {
+		font-size: 1.7rem;
+	}
+
+	form {
+		flex-direction: column;	
+	}
+
+}
