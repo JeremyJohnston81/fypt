@@ -105,16 +105,25 @@
 
     @keyframes fadeIn {
         0% { opacity: 0; }
-        90% { opacity: 0; }
         100% { opacity: 1; }
     }
 
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
     .delay {
-        animation: fadeIn 5s;
+        animation: fadeIn 2s;
+        animation-delay: 1s;
     }
 
     .fadein {
         animation: fadeIn 2s;
+    }
+
+    .fadeout {
+        animation: fadeOut 2s;
     }
 
     .loading {
@@ -122,6 +131,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: 0;
     }
 
     .propCard {

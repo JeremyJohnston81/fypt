@@ -4,7 +4,7 @@
     import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 
     let searchResults = []
-    let searchAddress = ""
+    let searchAddress = "1118 W 7th"
     let searched = false
     let error
 
@@ -28,7 +28,7 @@
     <div class="error">No properties found with that address in Harris County, TX</div> 
 {:else}
     {#each searchResults as property (property.account)}
-    <IntersectionObserver let:intersecting bottom={-150} top={-150}>
+    <IntersectionObserver let:intersecting bottom={-50}>
         <PropertyCard property={property} animate={intersecting} />
     </IntersectionObserver>
     {/each}
