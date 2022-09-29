@@ -110,11 +110,11 @@
 
     .delay {
         animation: fadeIn 2s;
-        animation-delay: 1s;
+        animation-delay: 0.6s;
     }
 
     .fadein {
-        animation: fadeIn 2s;
+        animation: fadeIn 0.5s;
     }
 
     .loading {
@@ -130,7 +130,7 @@
         flex-direction: column;
         padding: 1rem;
         background-color: white;
-        margin: 1.5rem;
+        margin-top: 1.5rem;
 
         transform:
             perspective(750px)
@@ -146,18 +146,12 @@
             transform: translate3d(0px, 0px, -25px);
         }
 
-        &:active {
-            transform-origin: center;
-            transform: rotateY(180deg);
-            transition: 0.7s ease-in-out transform;
-        }
-
         &.flip {
             transform-origin: center;
             transform: 
                 perspective(1000px)
                 rotateY(180deg);
-            transition: 1.5s ease-in-out transform;
+            transition: 0.5s ease-in-out transform;
         }
 
         &.animate {
@@ -166,6 +160,11 @@
 
         * p {
             margin: 0.5rem;
+        }
+
+        button {
+            margin: .3rem;
+            padding: 0.7rem 0;
         }
 
         > .details {
@@ -182,10 +181,6 @@
             &.back {
                 transform: rotateY(180deg);
 
-            }
-
-            > button {
-                margin: .3rem;
             }
 
             > .center {
