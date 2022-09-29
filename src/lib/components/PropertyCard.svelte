@@ -105,7 +105,7 @@
 
     @keyframes fadeIn {
         0% { opacity: 0; }
-        90% { opactiy: 0; }
+        90% { opacity: 0; }
         100% { opacity: 1; }
     }
 
