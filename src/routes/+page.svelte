@@ -35,5 +35,15 @@
 {/if}
 
 <style lang="scss">
+    h1:before {
+        content: 'STEP 1 of 2';
+        font-weight: bold;
+        font-size: 0.8em;
+        opacity: 0.4;
+    }
+    
+    h1:after {
+        font-size: 0.5em;
+    }
 
 </style>
