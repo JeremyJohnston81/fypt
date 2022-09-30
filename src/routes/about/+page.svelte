@@ -45,6 +45,7 @@
     h2 {
         font-weight: lighter;
         margin: 30px 10px 0px 10px;
+        color: var(--primary-color)
     }
 
     h2:after {

@@ -109,7 +109,7 @@
     }
 
     .delay {
-        animation: fadeIn 2s;
+        animation: fadeIn 5s;
         animation-delay: 0.6s;
     }
 
