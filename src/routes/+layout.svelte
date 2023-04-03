@@ -1,19 +1,18 @@
 <script>
-	import '../app.scss'
-	import { headerIsOpen } from "$lib/store.js";
-	import Nav from '$lib/layout/Nav.svelte'
-	import { navlink } from 'svelte-navlink-action'
+	import '../app.scss';
+	import { headerIsOpen } from '$lib/store.js';
+	import Nav from '$lib/layout/Nav.svelte';
+	import { navlink } from 'svelte-navlink-action';
 
 	const closeMenu = () => {
 		$headerIsOpen = false;
-	}
-
+	};
 </script>
 
 <Nav sticky collapsible>
 	<a href="/" use:navlink={{ exact: true }} on:click={closeMenu}>Home</a>
 	<a href="/about" use:navlink on:click={closeMenu}>About</a>
-	<a href="/donate" use:navlink on:click={closeMenu}>Donate</a>
+	<!-- <a href="/donate" use:navlink on:click={closeMenu}>Donate</a> -->
 </Nav>
 
 <main>

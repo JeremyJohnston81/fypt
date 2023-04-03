@@ -39,6 +39,14 @@
 	that to your home to get the proper appraisal value.
 </p>
 
+<h2>How do I submit the report to protest my taxes?</h2>
+<p>
+	Download this guide I created <a
+		href="https://fypt.s3.amazonaws.com/hcad/How+to+Protest+Your+Property+Taxes+Online.pdf"
+		target="_blank">here</a
+	>!
+</p>
+
 <h2>How much does this service cost?</h2>
 <p>
 	$0, zero, nada, zip, zilch - nothing! I'm doing this completely free to help create a fair
@@ -86,6 +94,13 @@
 <h2>How can we get in touch?</h2>
 <p>
 	Shoot me an <a href="mailto:johnston.jeremy+fypt@gmail.com" target="_blank">email</a> with any questions!
+</p>
+
+<h2>How do I get started?</h2>
+<p>
+	Make sure you've downloaded the guide above showing how to submit your protest, then go <a
+		href="/">here</a
+	> to search for your address and get your property tax report!
 </p>
 
 <style lang="scss">

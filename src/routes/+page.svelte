@@ -16,7 +16,9 @@
 	};
 </script>
 
-<h1>Protest Your Property Taxes</h1>
+<h2>Please read the <a href="/about">FAQ page</a> to understand how this report works</h2>
+
+<h1>Get Your Property Tax Report</h1>
 <LastUpdated />
 <form on:submit|preventDefault={() => propertySearch(searchAddress)}>
 	<input type="textbox" placeholder="Enter Property Address" bind:value={searchAddress} />
