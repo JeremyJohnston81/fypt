@@ -15,12 +15,12 @@
 	let protest = false;
 	let flip = false;
 
+	$: currentMarketValue = Number(subjectProperty?.marketValue ?? 0);
+	$: adjustedMarketValue = parseInt(subjectPropertyAdjustedPrice ?? 0);
+	$: willSaveMoney = adjustedMarketValue < currentMarketValue;
+
 	const submit = (action) => {
 		createReport(subjectProperty, comps, action);
-	};
-
-	const formatAmount = (amount) => {
-		return amount.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,');
 	};
 
 	const getComps = async (account) => {
@@ -59,12 +59,10 @@
 			0
 				? 0
 				: (subjectProperty.marketValue - subjectPropertyAdjustedPrice) *
-				  (subjectProperty.taxRate / 100);
+					(subjectProperty.taxRate / 100);
 
 		if (taxSavings > 0) protest = true;
 
-		subjectPropertyAdjustedPrice = formatAmount(subjectPropertyAdjustedPrice);
-		taxSavings = formatAmount(taxSavings);
 		compsRun = true;
 	};
 </script>
@@ -79,9 +77,9 @@
 				<div class="right">
 					<div class="comps fadein">
 						<p>Comparable Properties: <strong>{compCount}</strong></p>
-						<p>Current Market Value: <strong>${subjectProperty.marketValue}</strong></p>
-						<p>Adjusted Market Value: <strong>${subjectPropertyAdjustedPrice}</strong></p>
-						<p>Tax Savings: <strong>${taxSavings}</strong></p>
+						<p>Current Market Value: <strong>${currentMarketValue.toLocaleString()}</strong></p>
+						<p>Adjusted Market Value: <strong class="isGoodOrBad adjustedPrice" class:isBad={!willSaveMoney}>${adjustedMarketValue.toLocaleString()}</strong></p>
+						<p>Tax Savings: <strong class="isGoodOrBad" class:isBad={!willSaveMoney}>${taxSavings.toLocaleString()}</strong></p>
 						{#if compCount === 0}
 							<p>Sorry, we couldn't find any comparable properties to do the analysis</p>
 						{:else if protest}
@@ -118,6 +116,25 @@
 		}
 		100% {
 			opacity: 1;
+		}
+	}
+
+	.isGoodOrBad {
+		color: var(--green);
+		white-space: nowrap;
+	}
+
+	.adjustedPrice:before {
+		content: '▾';
+		display: inline-block;
+		margin-right: 0.2em;
+	}
+
+	.isBad {
+		color: var(--red);
+
+		&.adjustedPrice:before {
+			transform: rotate(180deg);
 		}
 	}
 
