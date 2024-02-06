@@ -77,9 +77,9 @@
 				<div class="right">
 					<div class="comps fadein">
 						<p>Comparable Properties: <strong>{compCount}</strong></p>
-						<p>Current Market Value: <strong>${currentMarketValue.toLocaleString()}</strong></p>
-						<p>Adjusted Market Value: <strong class="isGoodOrBad adjustedPrice" class:isBad={!willSaveMoney}>${adjustedMarketValue.toLocaleString()}</strong></p>
-						<p>Tax Savings: <strong class="isGoodOrBad" class:isBad={!willSaveMoney}>${taxSavings.toLocaleString()}</strong></p>
+						<p>Current Market Value: <strong>${currentMarketValue.toLocaleString(undefined, {maximumFractionDigits: 2})}</strong></p>
+						<p>Adjusted Market Value: <strong class="isGoodOrBad adjustedPrice" class:isBad={!willSaveMoney}>${adjustedMarketValue.toLocaleString(undefined, {maximumFractionDigits: 2})}</strong></p>
+						<p>Tax Savings: <strong class="isGoodOrBad" class:isBad={!willSaveMoney}>${taxSavings.toLocaleString(undefined, {maximumFractionDigits: 2})}</strong></p>
 						{#if compCount === 0}
 							<p>Sorry, we couldn't find any comparable properties to do the analysis</p>
 						{:else if protest}
