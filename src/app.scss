@@ -5,55 +5,55 @@
 	--accent-color: #2c2762;
 	--primary-fg-color: #fff;
 	--secondary-fg-color: #bbb;
-  --header-color: rgba(255,255,255,0.95);
+	--header-color: rgba(255,255,255,0.95);
 
-  --green-hue: 11, 195, 66;
-  --red-hue: 220, 52, 52;
+	--green-hue: 11, 195, 66;
+	--red-hue: 220, 52, 52;
 
-  // COLOR OPTIONS
-  --green: rgb(var(--green-hue));
-  --red: rgb(var(--red-hue));
+	// COLOR OPTIONS
+	--green: rgb(var(--green-hue));
+	--red: rgb(var(--red-hue));
 }
 
-  body {
+	body {
 	height: 100%;
 	font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  }
+	margin: 0;
+	}
 
-  h1 {
+	h1 {
 	font-size: 2rem;
 	font-weight: lighter;
 	display: flex;
 	flex-flow: column;
 	margin-bottom: 0.5em;
-  }
+	}
 
-  input, button {
+	input, button {
 	font-size: 2rem;
 	border-radius: var(--border-radius);
 	border: 1px solid rgba(0,0,0,0.4);
 	padding: 0.6rem 0.7rem;
-  }
+	}
 
-  input {
+	input {
 	font-size: 1.5rem;
-  }
+	}
 
-  input::placeholder {
+	input::placeholder {
 	opacity: 0.5;
-  }
+	}
 
-  input:focus {
+	input:focus {
 	outline-color: var(--primary-color);
-  }
+	}
 
-  form {
+	form {
 	display: flex;
 	gap: 0.6em;
-  }
+	}
 
-  button {
+	button {
 	font-size: 1.6rem;
 	padding: 0.3rem 1.5rem;
 	background-color: var(--primary-color);
@@ -61,54 +61,54 @@
 	border: none;
 	cursor: pointer;
 	transition: all 0.1s ease;
-  }
+	}
 
-  form button {
+	form button {
 	background-color: var(--secondary-color);
 	color: var(--secondary-fg-color);
-  }
+	}
 
-  button:hover {
+	button:hover {
 	opacity: 0.8;
-  }
+	}
 
-  p {
+	p {
 	font-size: 1.5rem;
 	margin-bottom: 0.5rem;
-  }
+	}
 
-  p:before {
+	p:before {
 	font-size: 1rem;
 	display: block;
 	margin-bottom: 1.5em;
 	margin-top: 1rem;
 	border-top: 2px dashed #ccc;
 	padding-top: 1.6rem;
-  }
+	}
 
-  p + button {
+	p + button {
 	padding: 0.5rem;
 	display: flex;
 	justify-content: center;
 	gap: 0.4em;
 	align-items: center;
-  }
+	}
 
-  p + button:before {
+	p + button:before {
 	opacity: 0.6;
-  }
+	}
 
-  p + button:after {
+	p + button:after {
 	content: ' 👉';
 	font-size: 1.4em;
-  }
+	}
 
-  .error {
+	.error {
 	color: red;
 	font-size: 2rem;
-  }
+	}
 
-  @media (max-width:480px) {
+	@media (max-width:480px) {
 	h1 {
 		font-size: 1.7rem;
 	}
