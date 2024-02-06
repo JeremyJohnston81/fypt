@@ -15,9 +15,9 @@
 	let protest = false;
 	let flip = false;
 
-  $: currentMarketValue = Number(subjectProperty?.marketValue ?? 0);
-  $: adjustedMarketValue = parseInt(subjectPropertyAdjustedPrice ?? 0);
-  $: willSaveMoney = adjustedMarketValue < currentMarketValue;
+	$: currentMarketValue = Number(subjectProperty?.marketValue ?? 0);
+	$: adjustedMarketValue = parseInt(subjectPropertyAdjustedPrice ?? 0);
+	$: willSaveMoney = adjustedMarketValue < currentMarketValue;
 
 	const submit = (action) => {
 		createReport(subjectProperty, comps, action);
@@ -59,7 +59,7 @@
 			0
 				? 0
 				: (subjectProperty.marketValue - subjectPropertyAdjustedPrice) *
-				  (subjectProperty.taxRate / 100);
+					(subjectProperty.taxRate / 100);
 
 		if (taxSavings > 0) protest = true;
 
@@ -119,13 +119,13 @@
 		}
 	}
 
-  .isGoodOrBad {
-    color: var(--green);
-  }
+	.isGoodOrBad {
+		color: var(--green);
+	}
 
-  .isBad {
-    color: var(--red);
-  }
+	.isBad {
+		color: var(--red);
+	}
 
 	.delay {
 		animation: fadeIn 5s;
