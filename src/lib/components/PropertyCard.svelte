@@ -15,9 +15,9 @@
 	let protest = false;
 	let flip = false;
 
-  $: currentMarketValue = Number(subjectProperty?.marketValue ?? 0)
-  $: adjustedMarketValue = parseInt(subjectPropertyAdjustedPrice ?? 0)
-  $: willSaveMoney = adjustedMarketValue < currentMarketValue
+  $: currentMarketValue = Number(subjectProperty?.marketValue ?? 0);
+  $: adjustedMarketValue = parseInt(subjectPropertyAdjustedPrice ?? 0);
+  $: willSaveMoney = adjustedMarketValue < currentMarketValue;
 
 	const submit = (action) => {
 		createReport(subjectProperty, comps, action);
