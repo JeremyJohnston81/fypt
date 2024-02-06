@@ -79,6 +79,7 @@
 				<div class="right">
 					<div class="comps fadein">
 						<p>Comparable Properties: <strong>{compCount}</strong></p>
+						<p>Current Market Value: <strong>${subjectProperty.marketValue}</strong></p>
 						<p>Adjusted Market Value: <strong>${subjectPropertyAdjustedPrice}</strong></p>
 						<p>Tax Savings: <strong>${taxSavings}</strong></p>
 						{#if compCount === 0}
