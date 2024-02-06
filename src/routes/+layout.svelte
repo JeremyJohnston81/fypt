@@ -24,10 +24,10 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding-top: 3rem;
 		width: 100%;
 		max-width: 1024px;
 		margin: 0 auto;
 		box-sizing: border-box;
+    padding: 1em;
 	}
 </style>

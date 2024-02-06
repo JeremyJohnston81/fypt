@@ -5,13 +5,42 @@
 	--accent-color: #2c2762;
 	--primary-fg-color: #fff;
 	--secondary-fg-color: #bbb;
-  }
-  
+  --header-color: rgba(255,255,255,0.95);
+
+  --black-hue: 0, 0, 0;
+  --blue-hue: 66, 133, 244;
+  --brick-hue: 234, 88, 12;
+  --cyan-hue: 8, 145, 178;
+  --green-hue: 35, 197, 94;
+  --orange-hue: 245, 158, 11;
+  --pink-hue: 219, 39, 119;
+  --purple-hue: 147, 51, 234;
+  --red-hue: 234, 100, 120;
+  --red-hue: 220, 52, 52;
+  --yellow-hue: 255, 218, 0;
+  --white-hue: 255, 255, 255;
+
+  // COLOR OPTIONS
+  --black: rgb(var(--black-hue));
+  --blue: rgb(var(--blue-hue));
+  --brick: rgb(var(--brick-hue));
+  --cyan: rgb(var(--cyan-hue));
+  --green: rgb(var(--green-hue));
+  --orange: rgb(var(--orange-hue));
+  --pink: rgb(var(--pink-hue));
+  --purple: rgb(var(--purple-hue));
+  --red: rgb(var(--red-hue));
+  --white: rgb(var(--white-hue));
+  --yellow: rgb(var(--yellow-hue));
+  --green: rgb(11, 195, 66);
+}
+
   body {
 	height: 100%;
 	font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   }
-  
+
   h1 {
 	font-size: 2rem;
 	font-weight: lighter;
@@ -19,31 +48,31 @@
 	flex-flow: column;
 	margin-bottom: 0.5em;
   }
-  
+
   input, button {
 	font-size: 2rem;
 	border-radius: var(--border-radius);
 	border: 1px solid rgba(0,0,0,0.4);
 	padding: 0.6rem 0.7rem;
   }
-  
+
   input {
 	font-size: 1.5rem;
   }
-  
+
   input::placeholder {
 	opacity: 0.5;
   }
-  
+
   input:focus {
 	outline-color: var(--primary-color);
   }
-  
+
   form {
 	display: flex;
 	gap: 0.6em;
   }
-  
+
   button {
 	font-size: 1.6rem;
 	padding: 0.3rem 1.5rem;
@@ -53,21 +82,21 @@
 	cursor: pointer;
 	transition: all 0.1s ease;
   }
-  
+
   form button {
 	background-color: var(--secondary-color);
 	color: var(--secondary-fg-color);
   }
-  
+
   button:hover {
 	opacity: 0.8;
   }
-  
+
   p {
 	font-size: 1.5rem;
 	margin-bottom: 0.5rem;
   }
-  
+
   p:before {
 	font-size: 1rem;
 	display: block;
@@ -76,7 +105,7 @@
 	border-top: 2px dashed #ccc;
 	padding-top: 1.6rem;
   }
-  
+
   p + button {
 	padding: 0.5rem;
 	display: flex;
@@ -84,11 +113,11 @@
 	gap: 0.4em;
 	align-items: center;
   }
-  
+
   p + button:before {
 	opacity: 0.6;
   }
-  
+
   p + button:after {
 	content: ' 👉';
 	font-size: 1.4em;
@@ -105,7 +134,7 @@
 	}
 
 	form {
-		flex-direction: column;	
+		flex-direction: column;
 	}
 
 }

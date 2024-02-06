@@ -15,12 +15,12 @@
 	let protest = false;
 	let flip = false;
 
+  $: currentMarketValue = Number(subjectProperty?.marketValue ?? 0)
+  $: adjustedMarketValue = parseInt(subjectPropertyAdjustedPrice ?? 0)
+  $: willSaveMoney = adjustedMarketValue < currentMarketValue
+
 	const submit = (action) => {
 		createReport(subjectProperty, comps, action);
-	};
-
-	const formatAmount = (amount) => {
-		return amount.toFixed().replace(/(\d)(?=(\d{3})+(,|$))/g, '$1,');
 	};
 
 	const getComps = async (account) => {
@@ -63,8 +63,6 @@
 
 		if (taxSavings > 0) protest = true;
 
-		subjectPropertyAdjustedPrice = formatAmount(subjectPropertyAdjustedPrice);
-		taxSavings = formatAmount(taxSavings);
 		compsRun = true;
 	};
 </script>
@@ -79,9 +77,9 @@
 				<div class="right">
 					<div class="comps fadein">
 						<p>Comparable Properties: <strong>{compCount}</strong></p>
-						<p>Current Market Value: <strong>${subjectProperty.marketValue}</strong></p>
-						<p>Adjusted Market Value: <strong>${subjectPropertyAdjustedPrice}</strong></p>
-						<p>Tax Savings: <strong>${taxSavings}</strong></p>
+						<p>Current Market Value: <strong>${currentMarketValue.toLocaleString()}</strong></p>
+						<p>Adjusted Market Value: <strong class="isGoodOrBad" class:willSaveMoney class:isBad={!willSaveMoney}>${adjustedMarketValue.toLocaleString()}</strong></p>
+						<p>Tax Savings: <strong class="isGoodOrBad" class:isBad={!willSaveMoney}>${taxSavings.toLocaleString()}</strong></p>
 						{#if compCount === 0}
 							<p>Sorry, we couldn't find any comparable properties to do the analysis</p>
 						{:else if protest}
@@ -120,6 +118,14 @@
 			opacity: 1;
 		}
 	}
+
+  .isGoodOrBad {
+    color: var(--green);
+  }
+
+  .isBad {
+    color: var(--red);
+  }
 
 	.delay {
 		animation: fadeIn 5s;
